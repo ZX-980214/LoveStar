@@ -23,17 +23,14 @@
 
 	label {
 
-		display: block;
-		margin: 0 auto;
-		color: pink;
 		font-size: 20px;
-		padding-right: 5px;
-		/*往左偏移10px*/
 		animation: mymove 2.5s infinite;
-		/* //关联动画名称、动画时长、循环 */
-		/*Safari 和 Chrome:*/
-		-webkit-animation: mymove 2.5s infinite;
-		/* //同上（兼容） */
+		background: linear-gradient(90deg, #ff69b4, #ffa07a, #ff69b4);
+		background-size: 200%;
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+		animation: gradientFill 3s ease-in-out infinite;
 	}
 
 	@keyframes mymove {
@@ -53,22 +50,32 @@
 		/* //名字放大大小 */
 	}
 
+	@keyframes gradientFill {
+		0% {
+			background-position: 100% 0;
+		}
+
+		100% {
+			background-position: 0 0;
+		}
+	}
+
 	.middle {
 		width: 100%;
 		height: 100vh;
 		display: flex;
 		align-items: center;
+		justify-content: center;
+		position: relative;
 	}
 
 	.middle2 {
 		position: absolute;
+		top: 20%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
 		z-index: 2;
-		width: 100%;
-		height: 100%;
-		margin: auto;
-
-		display: flex;
-		align-items: center;
 	}
 </style>
 <link rel="stylesheet" href="./style.css">
@@ -84,8 +91,8 @@
 	</div>
 	<div class="middle">
 		<div class="middle2">
+			<label>爱你哦，霞宝</label>
 		</div>
-
 		<img src="https://pic.imgdb.cn/item/642547f5a682492fcc15cd5d.gif" width="100%" height="auto" />
 	</div>
 
